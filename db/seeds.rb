@@ -10,11 +10,11 @@ categories = ["Articles", "Videos", "Tips", "Chairs", "Profiles"]
 
 5.times do
     User.create(name: Faker::Name.name, mod: rand(1...5), bio: Faker::Movies::Ghostbusters.quote, 
-    location: Faker::Nation.capital_city)
+    location: Faker::Nation.capital_city, password: "12345")
 end
 
 10.times do
-    Post.create(user_id: User.all.sample.id, content_url: contents.sample, category: categories.sample)
+    Post.create(user_id: User.all.sample.id, content_url: contents.sample, category: categories.sample, title: Faker::Book.title)
 end
 
 15.times do

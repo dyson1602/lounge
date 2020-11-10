@@ -10,14 +10,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # byebug
+    post_id = flash[:post_id]
     @comment = Comment.create(comment_params)
-    if @comment.valid?
-      PostComment.new(comment_id: @comment.id, post_id: flash[:post_id][0])
-      redirect_to post_path(flash[:post_id][0])
+    if @comment
+      PostComment.create(comment_id: @comment.id, post_id: post_id)
+      redirect_to post_path(post_id)
     else
       flash[:errors] = @comment.errors.full_messages
-      # add in later
+      redirect_to post_page(post_id)
     end
   end
 

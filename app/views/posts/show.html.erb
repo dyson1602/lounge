@@ -1,11 +1,12 @@
 <h1>Post</h1>
 
 <p><strong>User:</strong> <%= @user.name %></p>
-<p><strong>Content Link:</strong> <%= link_to "Title", @post.content_url %></p>
+<p><strong>Content Link:</strong> <%= link_to @post.title, @post.content_url %></p>
 <p><strong>Category:</strong> <%= @post.category %></p>
 
 
 <%= render 'comment_form' %>
+
 <h3>Comments:</h3>
 <p><% @comments.each do |comment| %></p>
         <p><%= comment.user_comment %></p>

@@ -2,3 +2,9 @@
 <p><strong>Location:</strong> <%= @user.location %></p>
 <p><strong>Mod:</strong> <%= @user.mod %></p>
 <p><strong>Bio:</strong> <%= @user.bio %> </p>
+
+<ul>
+<% Post.recent_posts.each do |post|%>
+    <li><%= link_to post.title, post_path(post) %>
+<% end %>
+</ul>

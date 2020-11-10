@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  # root 'application#welcome'
+
   resources :post_comments
   resources :comments
   resources :posts
