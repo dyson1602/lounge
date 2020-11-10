@@ -1,24 +1,82 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lounge</title>
+    <title>The Connoisseurs Lounge</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <style>
+      body {
+          background-image: url("/layouts/images/walton_street_lounge.jpeg");
+          /* background-color: #cccccc; */
+        }
+    </style> %>
   </head>
 
   <body>
-    <nav>
-    
-      <li class="nav-item"> 
-        <% if @current_user %>
-          <%= link_to "Logout", logout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Login", new_login_path  %>
-        <% end %>
-      </li>
+    <style> 
+      @media (min-width: 768px) {
+      .navbar-brand {
+          display: none;
+      }
+      }
+  </style>
+  <div class="container-fluid">
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">The Connoisseurs Lounge</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <%# <a class="nav-link" href="#">Link</a> %>
+          </li>
+          <li class="nav-item">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mod 1
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/posts">Articles</a>
+                <a class="dropdown-item" href="/users">Profile</a>
+                <a class="dropdown-item" href="#">Chairs</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"></a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mod 2
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/posts">Articles</a>
+                <a class="dropdown-item" href="/users">Profile</a>
+                <a class="dropdown-item" href="#">Chairs</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"></a>
+              </div>
+            </li>
+
+        <ul class= "nav navbar-nav navbar-right">
+
+
+          <li class="nav-item"> 
+            <% if @current_user %>
+              <%= link_to "Logout", logout_path, method: :delete %>
+            <% else %>
+              <%= link_to "Login", new_login_path  %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+  </div>
     </nav>
     <%= yield %>
   </body>
