@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav>
+    
+      <li class="nav-item"> 
+        <% if @current_user %>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_login_path  %>
+        <% end %>
+      </li>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -4,14 +4,10 @@
   <% end %>
 <% end %>
 
-<%= form_for(@post) do |f| %>
-  <%= f.label :title %><br>
+<%= bootstrap_form_for(@post) do |f| %>
   <%= f.text_field :title %><br>
-  <%= f.label :user_id %><br>
   <%= f.collection_select :user_id, User.all, :id, :name %><br>
-  <%= f.label :content_url %><br>
   <%= f.text_field :content_url %><br>
-  <%= f.label :category %><br>
   <%= f.collection_select :category, @categories, :itself, :itself %><br><br>
 
   <%= f.submit %>
