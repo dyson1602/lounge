@@ -10,9 +10,11 @@ class CommentsController < ApplicationController
   end
 
   def create
+    # byebug
     @comment = Comment.create(comment_params)
     if @comment.valid?
-      # redirect_to post_path()
+      PostComment.new(comment_id: @comment.id, post_id: flash[:post_id][0])
+      redirect_to post_path(flash[:post_id][0])
     else
       flash[:errors] = @comment.errors.full_messages
       # add in later
@@ -24,7 +26,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment(comment_params)
+    if @comment.update(comment_params)
       # add later
     else
       flash[:errors] = @comment.errors.full_messages
