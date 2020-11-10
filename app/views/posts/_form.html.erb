@@ -4,7 +4,7 @@
   <% end %>
 <% end %>
 
-<%= bootstrap_form_for(@post) do |f| %>
+<%= form_for(@post) do |f| %>
   <%= f.text_field :title %><br>
   <%= f.collection_select :user_id, User.all, :id, :name %><br>
   <%= f.text_field :content_url %><br>
