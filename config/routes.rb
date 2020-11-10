@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  # root '/', to: 'users#index'
-  #whats wrong here?
+  # root 'application#welcome'
 
   resources :post_comments
   resources :comments
