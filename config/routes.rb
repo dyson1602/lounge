@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
-  # root 'application#welcome'
+  # root '/', to: 'users#index'
+  #whats wrong here?
 
   resources :post_comments
   resources :comments
   resources :posts
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'login', to: 'sessions#new', as: 'new_login'
+  post '/sessions', to: 'sessions#create', as: 'login'
+  
 end
