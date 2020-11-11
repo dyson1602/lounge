@@ -9,6 +9,28 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <% if @current_user %>
+      <%= link_to "Mod 1 Articles", mod1_articles_path %>
+      <%= link_to "Mod 2 Articles", mod2_articles_path %>
+      <%= link_to "Mod 3 Articles", mod3_articles_path %>
+      <%= link_to "Mod 4 Articles", mod4_articles_path %>
+      <%= link_to "Mod 5 Articles", mod5_articles_path %>
+      <br>
+      <%= link_to "Mod 1 Videos", mod1_videos_path %>
+      <%= link_to "Mod 2 Videos", mod2_videos_path %>
+      <%= link_to "Mod 3 Videos", mod3_videos_path %>
+      <%= link_to "Mod 4 Videos", mod4_videos_path %>
+      <%= link_to "Mod 5 Videos", mod5_videos_path %>
+      <br>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+      <%= link_to 'Profile Page', user_path(session[:user_id]) %>
+      <%= link_to 'Home Page', posts_path %>
+      <%= link_to 'Connoisseurs', users_path %>
+    <% end %>
+
+
+
+
     <%= yield %>
   </body>
 </html>

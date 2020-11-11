@@ -1,13 +1,16 @@
 <h1>Post</h1>
 
-<p><strong>User:</strong> <%= @user.name %></p>
-<p><strong>Content Link:</strong> <%= link_to @post.title, @post.content_url %></p>
-<p><strong>Category:</strong> <%= @post.category %></p>
+<p><strong>User: </strong> <%= @user.name %></p>
+<p><strong>Content Link: </strong><a href="<%= @url %>"><%= @post.title %></a></p>
+<p><strong>Category: </strong> <%= @post.category %></p>
 
-
-<%= render 'comment_form' %>
+<%= render partial: 'comments/form' %>
 
 <h3>Comments:</h3>
-<p><% @comments.each do |comment| %></p>
-        <p><%= comment.user_comment %></p>
+<% @comments.each do |comment| %>
+        <p><%= comment.user.name %> - <%= comment.user_comment %>
+        <% if comment.user == @current_user %>
+                <%= link_to 'Edit', edit_comment_path(comment) %>
+                - <%= link_to 'Delete', comment_path(comment), method: :delete %></p>
+        <% end %>
 <% end %>

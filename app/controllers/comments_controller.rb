@@ -22,21 +22,21 @@ class CommentsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
     if @comment.update(comment_params)
-      # add later
+      redirect_to post_path(flash[:post])
     else
       flash[:errors] = @comment.errors.full_messages
     end
   end
 
   def destroy
-    @comment.destroy
-    # redirect_to Something_path
-  end
+    byebug
+    if @comment.destroy
+  en  redirect_to posts_path
+    end
 
   private
 
@@ -48,3 +48,5 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:user_id, :user_comment)
   end
 end
+
+end 

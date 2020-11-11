@@ -7,16 +7,19 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(@post.user_id)
+    @url = @post.content_url
     @comment = Comment.new
     @comments = @post.comments
+    # byebug
   end
 
   def new
     @post = Post.new
-    @categories = ["Articles", "Videos", "Tips", "Chairs", "Profiles"]
+    @categories = ["Articles", "Videos"]
   end
 
   def create
+    byebug
     @post = Post.create(post_params)
     if @post.valid?
       redirect_to post_path(@post)
