@@ -6,7 +6,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show  
+  def show
+    @recent_posts = Post.all.select { |post| post.user == @user }
   end
 
   def new

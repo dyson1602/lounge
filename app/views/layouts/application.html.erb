@@ -24,6 +24,8 @@
       <br>
       <%= link_to 'Logout', logout_path, method: :delete %>
       <%= link_to 'Profile Page', user_path(session[:user_id]) %>
+      <%= link_to 'Home Page', posts_path %>
+      <%= link_to 'Connoisseurs', users_path %>
     <% end %>
 
 

@@ -8,7 +8,7 @@
 <% end %>
 
 <ul>
-<% Post.recent_posts.each do |post|%>
+<% @recent_posts.each do |post|%>
     <li><%= link_to post.title, post_path(post) %>
 <% end %>
 </ul>

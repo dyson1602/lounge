@@ -2,7 +2,5 @@
   <%= f.hidden_field :user_id, value: @current_user.id%><br>
   <%= f.label :user_comment %><br>
   <%= f.text_area :user_comment %><br><br>
-  <% flash[:post_id] = @post.id %>
-  
-  <%= f.submit %>
+  <% flash[:post_id] = @post.id %>  <%= f.submit %>
 <% end %>
