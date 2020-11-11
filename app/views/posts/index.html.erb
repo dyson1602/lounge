@@ -1,10 +1,15 @@
-
-<h5>Recent Posts</h5>
-
-
-
-    <ul>
-    <% Post.recent_posts.each do |post|%>
-        <li><%= link_to post.title, post_path(post) %>
-    <% end %>
-    </ul>
+<div class="row">
+	<div class="col s4"></div>
+	<div class="col s4" >
+		<h5>Recent Posts</h5>
+		<ul>
+			<% Post.recent_posts.each do |post|%>
+				<li class="card-panel">
+						<strong><%= link_to post.title, post_path(post)%></strong>
+						<br>
+						Posted by: <%= post.user.name %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+ </div>
