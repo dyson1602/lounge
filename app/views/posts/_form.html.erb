@@ -5,9 +5,12 @@
 <% end %>
 
 <%= form_for(@post) do |f| %>
+  <%= f.label :title %><br>
   <%= f.text_field :title %><br>
-  <%= f.collection_select :user_id, User.all, :id, :name %><br>
+  <%= f.hidden_field :user_id, value: @current_user.id%><br>
+  <%= f.label :content_url %><br>
   <%= f.text_field :content_url %><br>
+  <%= f.label :category %>
   <%= f.collection_select :category, @categories, :itself, :itself %><br><br>
 
   <%= f.submit %>

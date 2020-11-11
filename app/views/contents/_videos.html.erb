@@ -1,0 +1,3 @@
+<% @sorted_videos.each do |video|%>
+    <p><%= link_to video.title, post_path(video) %></p>
+<% end %>
