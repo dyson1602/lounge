@@ -7,30 +7,62 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <% if @current_user %>
-      <%= link_to "Mod 1 Articles", mod1_articles_path %>
-      <%= link_to "Mod 2 Articles", mod2_articles_path %>
-      <%= link_to "Mod 3 Articles", mod3_articles_path %>
-      <%= link_to "Mod 4 Articles", mod4_articles_path %>
-      <%= link_to "Mod 5 Articles", mod5_articles_path %>
-      <br>
-      <%= link_to "Mod 1 Videos", mod1_videos_path %>
-      <%= link_to "Mod 2 Videos", mod2_videos_path %>
-      <%= link_to "Mod 3 Videos", mod3_videos_path %>
-      <%= link_to "Mod 4 Videos", mod4_videos_path %>
-      <%= link_to "Mod 5 Videos", mod5_videos_path %>
-      <br>
-      <%= link_to 'Logout', logout_path, method: :delete %>
-      <%= link_to 'Profile Page', user_path(session[:user_id]) %>
-      <%= link_to 'Home Page', posts_path %>
-      <%= link_to 'Connoisseurs', users_path %>
-    <% end %>
+  <div class="container">
+      <% if @current_user %>
+    <ul id="mod1" class="dropdown-content">
+        <li><%= link_to "Mod 1 Articles", mod1_articles_path %></li>
+        <li><%= link_to "Mod 1 Videos", mod1_videos_path %></li>
+    </ul>
+    <ul id="mod2" class="dropdown-content">
+        <li><%= link_to "Mod 2 Articles", mod2_articles_path %></li>
+        <li><%= link_to "Mod 2 Videos", mod2_videos_path %></li>
+    </ul>
+    <ul id="mod3" class="dropdown-content">
+        <li><%= link_to "Mod 3 Articles", mod3_articles_path %></li>
+        <li><%= link_to "Mod 3 Videos", mod3_videos_path %></li>
+    </ul>
+    <ul id="mod4" class="dropdown-content">
+        <li><%= link_to "Mod 4 Articles", mod4_articles_path %></li>
+        <li><%= link_to "Mod 4 Videos", mod4_videos_path %></li>
+    </ul>
+    <ul id="mod5" class="dropdown-content">
+        <li><%= link_to "Mod 5 Articles", mod5_articles_path %></li>
+        <li><%= link_to "Mod 5 Videos", mod5_videos_path %></li>
+    </ul>
+      <% end %>
+    <nav class="nav-wrapper">
+      <a href="" class="dropdown-trigger" data-target="mod1">Mod1</a>
+      <a href="" class="dropdown-trigger" data-target="mod2">Mod2</a>
+      <a href="" class="dropdown-trigger" data-target="mod3">Mod3</a>
+      <a href="" class="dropdown-trigger" data-target="mod4">Mod4</a>
+      <a href="" class="dropdown-trigger" data-target="mod5">Mod5</a>
+      
+        <ul class="right">
+          <li><%= link_to 'Home Page', posts_path %></li>
+          <li><%= link_to 'Profile Page', user_path(session[:user_id]) %></li>
+          <li><%= link_to 'Connoisseurs', users_path %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        </ul>
+    </nav>
+      <%= yield %>
 
 
-
-
-    <%= yield %>
+    <!-- Minified Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        $(".dropdown-trigger").dropdown();
+      });
+    </script>
+  </div>
   </body>
 </html>
