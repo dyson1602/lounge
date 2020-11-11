@@ -1,13 +1,10 @@
-<h1>Posts</h1>
+
+<h5>Recent Posts</h5>
 
 
-<% if @current_user %>
+
     <ul>
     <% Post.recent_posts.each do |post|%>
         <li><%= link_to post.title, post_path(post) %>
     <% end %>
     </ul>
-<% else%>
-    <p><%= link_to 'Login', new_login_path %></p>
-    <p><%= link_to 'Sign Up', new_user_path %></p>
-<% end %>

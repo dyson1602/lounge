@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  get 'login', to: 'sessions#new', as: 'new_login'
+  get '/sessions', to: 'sessions#new', as: 'new_login'
+  get '/login', to: 'sessions#index', as: 'login'
+
   post '/sessions', to: 'sessions#create', as: 'login_now'
   
   delete '/logout', to: 'sessions#logout', as: 'logout'
   
-
   get '/mod1_articles', to: 'contents#mod1_articles', as: 'mod1_articles'
   get '/mod1_videos', to: 'contents#mod1_videos', as: 'mod1_videos'
   

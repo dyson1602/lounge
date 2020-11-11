@@ -34,8 +34,7 @@
     <ul id="mod5" class="dropdown-content">
         <li><%= link_to "Mod 5 Articles", mod5_articles_path %></li>
         <li><%= link_to "Mod 5 Videos", mod5_videos_path %></li>
-    </ul>
-      <% end %>
+    </ul> 
     <nav class="nav-wrapper">
       <a href="" class="dropdown-trigger" data-target="mod1">Mod1</a>
       <a href="" class="dropdown-trigger" data-target="mod2">Mod2</a>
@@ -50,6 +49,7 @@
           <li><%= link_to 'Logout', logout_path, method: :delete %></li>
         </ul>
     </nav>
+    <% end %>
       <%= yield %>
 
 

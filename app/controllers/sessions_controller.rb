@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorization, only: [:new, :create]
+    skip_before_action :authorization, only: [:new, :create, :index]
 
     def logout
         session.delete(:user_id)
-        redirect_to posts_path
+        redirect_to login_path
+    end
+
+    def index
     end
 
     def new
