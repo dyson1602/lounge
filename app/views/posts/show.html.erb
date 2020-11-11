@@ -3,6 +3,14 @@
 <p><strong>User: </strong> <%= @user.name %></p>
 <p><strong>Content Link: </strong><a href="<%= @url %>"><%= @post.title %></a></p>
 <p><strong>Category: </strong> <%= @post.category %></p>
+<p>
+	<strong>
+		<% if @post.user == @current_user %>
+			<%= link_to "Edit Post", edit_post_path(@post) %> - 
+			<%= link_to "Delete Post", post_path(@post), method: :delete %>
+		<% end %>
+	</strong>
+</p>
 
 <%= render partial: 'comments/form' %>
 

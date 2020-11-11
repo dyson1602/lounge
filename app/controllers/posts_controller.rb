@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorization, only: [:index]
 
   def index
     @posts = Post.all
@@ -19,7 +20,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    byebug
     @post = Post.create(post_params)
     if @post.valid?
       redirect_to post_path(@post)
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @categories = ["Articles", "Videos"]
   end
   
   def update

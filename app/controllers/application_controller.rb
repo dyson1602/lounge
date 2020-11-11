@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorization
-        redirect_to new_login_path unless logged_in
+        redirect_to posts_path unless logged_in
     end
 
 end
