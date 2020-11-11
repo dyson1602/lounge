@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    byebug
+    # byebug
     @post = Post.create(post_params)
     if @post.valid?
       redirect_to post_path(@post)

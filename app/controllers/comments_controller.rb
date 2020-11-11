@@ -33,10 +33,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    byebug
+    # byebug
     if @comment.destroy
-  en  redirect_to posts_path
+      redirect_to posts_path
     end
+  end
 
   private
 
@@ -47,6 +48,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:user_id, :user_comment)
   end
-end
-
 end 
