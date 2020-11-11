@@ -2,6 +2,7 @@
 <p><strong>Location:</strong> <%= @user.location %></p>
 <p><strong>Mod:</strong> <%= @user.mod %></p>
 <p><strong>Bio:</strong> <%= @user.bio %> </p>
+<%= link_to 'DELETE ACCOUNT', user_path(@user), method: :delete %>
 
 <% if @user == @current_user %>
     <p><strong><%= link_to 'Create Post', new_post_path %></strong></p>

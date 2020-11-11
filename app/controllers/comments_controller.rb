@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    post_id = flash[:post_id]
+    post_id = params[:comment][:post_id]
+    byebug
     @comment = Comment.create(params.require(:comment).permit(:user_id, :user_comment))
     #When creating a comment from a post show page the create action method doesn't recognize our
     #comment_params method, so we had to put it in manually.

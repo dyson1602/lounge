@@ -38,9 +38,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    # bring up a confirmation page that the User has been destroyed 
-    # redirect later
+    if @user.destroy
+      session.delete(:user_id)
+      redirect_to posts_path
+    end
   end
 
   private
@@ -50,6 +51,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :mod, :bio, :location, :password, :username)
+    params.require(:user).permit(:name, :mod, :bio, :location, :password, :user_name)
   end
 end

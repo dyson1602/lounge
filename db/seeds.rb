@@ -9,7 +9,7 @@ contents = ["https://www.google.com/", "https://twitter.com/home", "https://www.
 categories = ["Articles", "Videos"]
 
 10.times do
-    User.create(name: Faker::Name.name, username: Faker::Internet.username, mod: rand(1...6), bio: Faker::Movies::Ghostbusters.quote, 
+    User.create(name: Faker::Name.name, user_name: Faker::Internet.username, mod: rand(1...6), bio: Faker::Movies::Ghostbusters.quote, 
     location: Faker::Nation.capital_city, password: "12345")
 end
 
