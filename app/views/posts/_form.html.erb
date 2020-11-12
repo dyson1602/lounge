@@ -5,13 +5,36 @@
 <% end %>
 
 <%= form_for(@post) do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br>
-  <%= f.hidden_field :user_id, value: @current_user.id%><br>
-  <%= f.label :content_url %><br>
-  <%= f.text_field :content_url %><br>
-  <%= f.label :category %>
-  <%= f.collection_select :category, @categories, :itself, :itself %><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col s6 offset-s3 z-depth-4 brown darken-3 four-side form-margin">
+      <h5 id="form-font" class="center grey-text text-lighten-3">New Post</h5>
+      <div class="input-field">
+        <div class="container">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+          <%= f.hidden_field :user_id, value: @current_user.id%>
+        </div>
+      </div>
 
-  <%= f.submit %>
+      <div class="input-field">
+        <div class="container">
+          <%= f.label :content_url %>
+          <%= f.text_field :content_url %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="container">
+          <%= f.label :category %>
+          <%= f.collection_select :category, @categories, :itself, :itself, class: "browser-default" %>
+        </div>
+      </div>
+
+      <div class="container">
+        <a class="btn blue-grey lighten-5 waves-effect waves-light btn-margin z-depth-3" style="width: 100%"><%= f.submit %></a>
+      </div>
+      </div>
+    </div>
+  </div>
 <% end %>
