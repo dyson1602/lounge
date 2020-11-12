@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
     skip_before_action :authorization, only: [:new, :create, :index]
 
     def logout
-        byebug
-        session.delete[:user_id]
+        # byebug
+        session.delete(:user_id)
         redirect_to login_path
     end
 
