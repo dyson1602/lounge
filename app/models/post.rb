@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
 
     def self.recent_posts
-        self.last(10).reverse
+        self.last(12).reverse
     end
 
    
