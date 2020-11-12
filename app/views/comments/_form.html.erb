@@ -1,5 +1,5 @@
 <%= form_for(@comment) do |f| %>
-  <div class="container">
+  <div class="container left">
     <div class="row">
       <div class="z-depth-4 form-margin">
       <div class="input-field">
@@ -12,9 +12,9 @@
       </div>
 
       <div class="container">
-        <a class="btn grey waves-effect waves-light btn-margin z-depth-3" style="width: 100%"><i class="material-icons right">comment</i><%= f.submit "comment"%></a>
+        <a class="btn-small btn-flat blue-grey lighten-5 waves-effect waves-light btn-margin z-depth-3" style="width: 50%"><i class="material-icons right">comment</i><%= f.submit "comment"%></a>
       </div>
       </div>
-    </div>w
+    </div>
   </div>
 <% end %>
