@@ -12,9 +12,10 @@
 				<% end %>
 			</blockquote>	
 			<blockquote style="font-size: 18px">
-				<p><strong>Location:</strong> <%= @user.location %></p>
-				<p><strong>Mod:</strong> <%= @user.mod %></p>
-				<p><strong>Bio:</strong> <%= @user.bio %> </p>
+				<p><strong style="color: pink">Location  </strong> <%= @user.location %></p>
+				<p><strong style="color: pink">Mod  </strong> <%= @user.mod %></p>
+				<p><strong style="color: pink">Bio  </strong> <%= @user.bio %> </p>
+				<p><strong style="color: pink">Blog  </strong> <%= @user.bio %> </p>
 			</blockquote>
 		</div>
 	</div>
@@ -24,7 +25,7 @@
 			<h3 class="stand_out">
 				Contributions
 			</h3>
-			<ul>
+			<ul class="stand_out">
 				<% @recent_posts.each do |post|%>
 						<li><%= link_to post.title, post_path(post) %>
 				<% end %>
