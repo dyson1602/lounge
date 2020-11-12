@@ -1,7 +1,7 @@
 <div class="row">
 	<% Post.recent_posts.each do |post|%>
 		<div class="col s4" >
-			<div class="card">
+			<div class="card new_post_opacity">
 				<div class="card-image waves-effect waves-block waves light">
 					<%= image_tag 'suited1.jpg', class: "activator" %>
 				</div>
@@ -14,7 +14,7 @@
 				</div>
 				<div class="card-reveal">
 					<span 
-						class="card-title grey-text text-darken-4">
+						class="card-title grey-text text-darken-4 font-size: 10px">
 						Comments<i class="material-icons right">close</i>
 					</span>
 					<% post.comments.each do |comment| %>
@@ -24,4 +24,4 @@
 			</div>
 		</div>	
 	<% end %>
- </div>
+</div>
