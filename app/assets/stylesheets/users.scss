@@ -45,17 +45,17 @@
 
 .three-side {
   border: 2px solid white;
-  border-top: 0;
+  // border-top: 0;
 }
 
-.input-field [type=text] {
+.input-field [type], textarea {
   color: white !important;
   border-bottom: 1px solid white !important;
 }
 
-.input-field [type=password] {
-  color: white !important;
-}
+// .input-field [type=password] {
+//   color: white !important;
+// }
 
 .btn-margin {
   margin-bottom: 35px;
