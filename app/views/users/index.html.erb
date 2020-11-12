@@ -1,5 +1,12 @@
-<h1>Users Index Page</h1>
 
-<% @users.each do |user| %>
-    <p><%= link_to user.name, user_path(user) %></p>
-<% end %>
+	<div class="row">
+		<% @users.each do |user| %>
+			<div class="col s4">
+				<div class="card opacity">
+					<div class="card-panel hoverable blue-text">
+						<%= link_to user.name, user_path(user) %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
