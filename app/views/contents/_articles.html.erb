@@ -1,3 +1,11 @@
-<% @sorted_articles.each do |article|%>
-    <p><%= link_to article.title, post_path(article) %></p>
+<% if @sorted_articles != nil %>
+	<div class="row">
+    <% @sorted_articles.each do |article|%>
+			<div class="col s4">
+        <div class="card-panel hoverable">
+        	<%= link_to article.title, post_path(article) %>
+				</div>
+			</div>
+    <% end %>
+	</div>
 <% end %>

@@ -1,3 +1,11 @@
-<% @sorted_videos.each do |video|%>
-  <p><%= link_to video.title, post_path(video) %></p>
+<% if @sorted_videos != nil %>
+	<div class="row">
+    <% @sorted_videos.each do |video|%>
+			<div class="col s4">
+        <div class="card-panel hoverable">
+        	<%= link_to video.title, post_path(video) %>
+				</div>
+			</div>
+    <% end %>
+	</div>
 <% end %>
