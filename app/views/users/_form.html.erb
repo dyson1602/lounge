@@ -1,23 +1,28 @@
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <p><%= error %></p>
+<div class="container">
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 
-<%= form_for(@user) do |f| %>
-  <%= f.label :user_name %><br>
-  <%= f.text_field :user_name %><br>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br>
-  <%= f.label :mod %><br>
-  <%= f.number_field :mod %><br>
-  <%= f.label :bio %><br>
-  <%= f.text_area :bio %><br>
-  <%= f.label :location %><br>
-  <%= f.text_field :location %><br><br>
+  <%= form_for(@user) do |f| %>
+  <div class="container">
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :mod %>
+    <%= f.number_field :mod %>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
 
-  <%= f.submit %>
-<% end %>
+    <a class="btn waves-effect"><%= f.submit %></a>
+  </div>
+
+  <% end %>
