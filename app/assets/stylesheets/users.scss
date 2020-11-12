@@ -22,6 +22,14 @@
     color: rgb(0, 0, 120)
 }
 
+
+.white_stand_out {
+  background: rgba(255,255,255,0.3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  z-index: 1;
+  color: darkblue;
+}
+
 .try_class{ 
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */

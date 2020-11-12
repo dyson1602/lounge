@@ -1,12 +1,12 @@
 
 <div class="row">
 	<div class="col s6">
-		<div style="color: white">
+		<div class="stand_out">
 			<h1><%= @user.name %></h1>
 			<blockquote style="font-size: 20px">
 				<% if @user == @current_user %>
 					<p><strong><%= link_to 'Create Post', new_post_path %></strong></p>
-					<div style="color: red">
+					<div class="delete_account">
 						<%= link_to 'DELETE ACCOUNT', user_path(@user), method: :delete %>
 					</div>
 				<% end %>
@@ -20,8 +20,8 @@
 	</div>
 
 	<div class="col s6">
-		<div class="center-align">
-			<h3 style="color: white">
+		<div class="right-align">
+			<h3 class="stand_out">
 				Contributions
 			</h3>
 			<ul>
