@@ -14,6 +14,10 @@
  *= require_self
  */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-image: url(walton_street_lounge.jpg);
   min-height: 100%;
