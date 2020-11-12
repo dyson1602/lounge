@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @post = PostComment.find_by(comment: @comment).post
   end
 
   def update

@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col s5">
 		<div class="stand_out">
-		<h5><strong>Contributor: </strong> <%= link_to @user.name, user_path(@user) %></h5>
+		<h4>Contributor <%= link_to @user.name, user_path(@user) %></h4>
 		<strong>
 			<% if @post.user == @current_user %>
 				<%= link_to "Edit Post", edit_post_path(@post) %> - 
