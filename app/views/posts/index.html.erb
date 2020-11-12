@@ -4,10 +4,26 @@
 		<h5>Recent Posts</h5>
 		<ul>
 			<% Post.recent_posts.each do |post|%>
-				<li class="card-panel">
-						<strong><%= link_to post.title, post_path(post)%></strong>
-						<br>
-						Posted by: <%= post.user.name %>
+				<li class="card">
+					<div class="card-image waves-effect waves-block waves light">
+						<%= image_tag 'suited1.jpg', class: "activator" %>
+					</div>
+					<div class="card-content">
+						<span class="card_title activator grey-text text-darken-4">
+							<strong><%= link_to post.title, post_path(post)%></strong>
+							<i class="material-icons right">more_vert</i>
+						</span>
+						<p>Posted by: <%= post.user.name %></p>
+					</div>
+					<div class="card-reveal">
+						<span 
+							class="card-title grey-text text-darken-4">
+							Comments<i class="material-icons right">close</i>
+						</span>
+						<% post.comments.each do |comment| %>
+							<p><%= comment.user_comment %></p>
+						<% end %>
+					</div>		
 				</li>
 			<% end %>
 		</ul>

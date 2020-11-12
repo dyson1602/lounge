@@ -8,4 +8,6 @@ class Post < ApplicationRecord
         self.last(10).reverse
     end
 
+   
+
 end
