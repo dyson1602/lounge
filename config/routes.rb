@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  get '/sessions', to: 'sessions#new', as: 'new_login'
-  get '/login', to: 'sessions#index', as: 'login'
+  get '/login', to: 'sessions#new', as: 'new_login'
+  get '/home', to: 'sessions#index', as: 'login'
 
   post '/sessions', to: 'sessions#create', as: 'login_now'
   
