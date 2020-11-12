@@ -8,21 +8,42 @@
 
 
   <%= form_for(@user) do |f| %>
-  <div class="container">
-    <%= f.label :user_name %>
-    <%= f.text_field :user_name %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.label :mod %>
-    <%= f.number_field :mod %>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+    <div class="container">
+      <div class="row">
+        <div class="col s6 offset-s3">
+        <div class="input-field white-text">
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name %>
+        </div>
 
-    <a class="btn waves-effect"><%= f.submit %></a>
-  </div>
+        <div class="input-field">
+          <%= f.label :name %>
+          <%= f.text_field :name %> 
+        </div>
+
+        <div class="input-field">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        
+        <div class="input-field">
+          <%= f.label :mod %>
+          <%= f.number_field :mod %>
+        </div>
+
+        <div class="input-field">
+          <%= f.label :bio %>
+          <%= f.text_area :bio %>
+        </div>
+        
+        <div class="input-field">
+          <%= f.label :location %>
+          <%= f.text_field :location %>
+        </div>
+
+        <a class="btn green waves-effect waves-light"><%= f.submit %></a>
+        </div>
+      </div>
+    </div>
 
   <% end %>
