@@ -1,10 +1,14 @@
 
-<div class="row white_stand_out">
-	<% @users.each do |user| %>
-		<div class="col s4">
-			<div class="card-panel hoverable">
-				<%= link_to user.name, user_path(user) %>
+<div class="stand_out center-align">
+	<h3 style="color: white">Fellow Chair Connoisseurs</h3>
+</div>
+<div class="row stand_out">
+	
+		<% @users.each do |user| %>
+			<div class="col s4">
+				<div class="card-panel hoverable">
+					<%= link_to user.name, user_path(user) %>
+				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
 </div>
