@@ -6,9 +6,37 @@
     background: #fff;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     opacity: .65;
-    z-index: -10;
+    z-index: 1;
   }
   
 .div_color {
     color: rgb(0, 0, 120)
 }
+
+.form-opacity {
+  opacity: .70;
+}
+
+.three-side {
+  border: 2px solid white;
+  border-top: 0;
+}
+
+.input-field [type=text] {
+  color: white !important;
+  border-bottom: 1px solid white !important;
+}
+
+.input-field [type=password] {
+  color: white !important;
+}
+
+.btn-margin {
+  margin-bottom: 50px;
+}
+// form {
+//   // padding: 8px;
+//   // border-radius: 3px;
+//   // box-sizing: border-box;
+//   // margin: auto 300px 250px 300px;
+// }
