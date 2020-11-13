@@ -13,3 +13,14 @@
     color: black;
     font-size: 10px;
   }
+
+  .index-container {
+  max-height: 85vh;
+  overflow: scroll;
+  background-color:   rgba(96, 96, 96, 0.7);
+}
+
+.sub-form {
+  font-size: 10px;
+  color: lightgray;
+}
