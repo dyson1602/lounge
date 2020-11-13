@@ -1,3 +1,21 @@
 
-  <%= render "form" %>
+<%= form_for(@comment) do |f| %>
+  <div class="container center" style="margin-top: 175px">
+    <div class="row">
+      <div class="z-depth-4 form-margin">
+      <div class="input-field">
+        <div class="container">
+          <%= f.hidden_field :user_id, value: @current_user.id %>
+          <%= f.hidden_field :post_id, value: @post.id %>
+          <%= f.label :user_comment %>
+          <%= f.text_area :user_comment, class: "materialize-textarea" %>
+        </div>
+      </div>
 
+      <div class="container">
+        <a class="btn-small btn-flat white waves-effect waves-light btn-margin z-depth-3" style="width: 100%"><i class="material-icons right">comment</i><%= f.submit "comment"%></a>
+      </div>
+      </div>
+    </div>
+  </div>
+<% end %>
