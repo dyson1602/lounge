@@ -1,2 +1,40 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
 
-<%= render 'form' %>
+<%= form_for(@post) do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="col s6 offset-s3 z-depth-4 stand_out four-side form-margin">
+      <h5 id="form-font" class="center white-text">Edit Post</h5>
+      <div class="input-field">
+        <div class="container">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+          <%= f.hidden_field :user_id, value: @current_user.id%>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="container">
+          <%= f.label :content_url %>
+          <%= f.text_field :content_url %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="container">
+          <%= f.label :category %>
+          <%= f.collection_select :category, @categories, :itself, :itself %>
+        </div>
+      </div>
+
+      <div class="container">
+        <a class="btn-flat white waves-effect waves-light btn-margin z-depth-3" style="width: 100%"><i class="material-icons right">mode_edit</i><%= f.submit "Edit Post"%></a>
+      </div>
+      </div>
+    </div>
+  </div>
+<% end %>
