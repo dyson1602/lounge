@@ -1,6 +1,6 @@
 <% if @sorted_videos != nil %>
 	<div class="row">
-    <% @sorted_videos.each do |video|%>
+    <% @sorted_videos.reverse.each do |video|%>
 			<div class="col s4">
         <div class="card-panel hoverable">
         	<%= link_to video.title, post_path(video) %>

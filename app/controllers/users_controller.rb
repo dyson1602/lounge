@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def destroy
     if @user.destroy
       session.delete(:user_id)
-      redirect_to posts_path
+      redirect_to login_path
     end
   end
 

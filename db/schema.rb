@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_233758) do
+ActiveRecord::Schema.define(version: 2020_11_13_174524) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_11_10_233758) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "user_name"
+    t.string "blog"
   end
 
 end

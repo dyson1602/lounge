@@ -1,35 +1,36 @@
-
-<div class="row">
-	<div class="col s6">
-		<div class="stand_out">
-			<h1><%= @user.name %></h1>
-			<blockquote style="font-size: 20px">
-				<% if @user == @current_user %>
-					<p><strong><%= link_to 'Create Post', new_post_path, class: "btn-flat btn-small white waves-effect waves-light" %></strong></p>
-					<div class="delete_account">
-						<%= link_to 'DELETE ACCOUNT', user_path(@user), method: :delete, class: "btn-flat btn-small red waves-effect waves-light" %>
-					</div>
-				<% end %>
-			</blockquote>	
-			<blockquote style="font-size: 18px">
-				<p><strong style="color: pink">Location  </strong> <%= @user.location %></p>
-				<p><strong style="color: pink">Mod  </strong> <%= @user.mod %></p>
-				<p><strong style="color: pink">Bio  </strong> <%= @user.bio %> </p>
-				<p><strong style="color: pink">Blog  </strong> <%= @user.bio %> </p>
-			</blockquote>
+<div class="users-container">
+	<div class="row">
+		<div class="col s6">
+			<div class="stand_out">
+				<h1><%= @user.name %></h1>
+				<blockquote style="font-size: 20px">
+					<% if @user == @current_user %>
+						<p><strong><%= link_to 'Create Post', new_post_path, class: "btn-flat btn-small white waves-effect waves-light" %></strong></p>
+						<div class="delete_account">	
+							<%= link_to 'DELETE ACCOUNT', user_path(@user), method: :delete, class: "btn-flat btn-small waves-effect red darken-4 waves-light" %>
+						</div>
+					<% end %>
+				</blockquote>	
+				<blockquote style="font-size: 18px">
+					<p><strong style="color: pink">Location  </strong> <%= @user.location %></p>
+					<p><strong style="color: pink">Mod  </strong> <%= @user.mod %></p>
+					<p><strong style="color: pink">Bio  </strong> <%= @user.bio %> </p>
+					<p><strong style="color: pink"><%= link_to "My Blog", @user.blog %></strong> </p>
+				</blockquote>
+			</div>
 		</div>
-	</div>
 
-	<div class="col s6">
-		<div class="right-align">
-			<h3 class="stand_out">
-				Contributions
-			</h3>
-			<ul class="stand_out">
-				<% @recent_posts.each do |post|%>
-						<li><%= link_to post.title, post_path(post) %>
-				<% end %>
-			</ul>
-		</div>
+		<div class="col s6">
+			<div class="right-align">
+				<h3 class="stand_out">
+					Contributions
+				</h3>
+				<ul class="stand_out">
+					<% @recent_posts.each do |post|%>
+							<li><%= link_to post.title, post_path(post) %>
+					<% end %>
+				</ul>
+			</div>
+		</div>	
 	</div>	
 </div>
