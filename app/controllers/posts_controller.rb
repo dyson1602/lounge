@@ -4,6 +4,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @imgs = [
+      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80",
+      "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3172&q=80",
+      "https://images.unsplash.com/photo-1581466046946-06ea1cdcda9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80",
+      "https://images.unsplash.com/photo-1577632585381-c50d2d100116?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80",
+      "https://images.unsplash.com/photo-1563813318650-1e23051cf43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80",
+      "https://images.unsplash.com/photo-1547269174-c16503aab218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80"
+    ]
   end
 
   def show
