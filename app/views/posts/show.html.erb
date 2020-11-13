@@ -25,5 +25,15 @@
 		</div>
 	</div>
 
+
+<% if @post.category == "Articles"%>
+	<div class="col s7 right-align">
+		<h3><%= link_to @post.title, @post.content_url %></h3>
+	</div>
+<% elsif @post.category == "Videos"%>
+	<div class="col s7 right-align">
+		<iframe width="480" height="360" src="<%= @post.extract_embed(@post.content_url) %>" frameborder="0" allowfullscreen></iframe>
+	</div>
+<% end %>
 	
 </div>

@@ -12,6 +12,7 @@
       <div class="input-field">
         <div class="container">
           <%= f.label :title %>
+          <div class="sub-form">(Something quick and descriptive)</div>
           <%= f.text_field :title %>
           <%= f.hidden_field :user_id, value: @current_user.id%>
         </div>
@@ -20,6 +21,7 @@
       <div class="input-field">
         <div class="container">
           <%= f.label :content_url %>
+          <div class="sub-form">(Youtube only, please)</div> 
           <%= f.text_field :content_url %>
         </div>
       </div>
